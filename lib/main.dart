@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void
 main() {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }
 
@@ -14,6 +14,7 @@ class MyApp
     super.key,
   });
 
+  // This widget is the root of your application.
   @override
   Widget build(
     BuildContext context,
@@ -22,16 +23,16 @@ class MyApp
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(
+          seedColor: const Color.fromARGB(
             255,
-            7,
-            204,
-            234,
+            255,
+            111,
+            0,
           ),
         ),
       ),
-      home: MyHomePage(
-        title: 'Study Club',
+      home: const MyHomePage(
+        title: 'Selamat datang di aplikasi saya',
       ),
     );
   }
@@ -44,6 +45,7 @@ class MyHomePage
     super.key,
     required this.title,
   });
+
   final String title;
 
   @override
@@ -58,56 +60,12 @@ class _MyHomePageState
         State<
           MyHomePage
         > {
-  int _selectedIndex = 0;
-
   int _counter = 0;
 
   void _incrementCounter() {
     setState(
       () {
         _counter++;
-      },
-    );
-  }
-
-  // Daftar halaman
-  final List<
-    Widget
-  >
-  _pages = [
-    Center(
-      child: Text(
-        "Beranda",
-        style: TextStyle(
-          fontSize: 24,
-        ),
-      ),
-    ),
-    ProfilePage(),
-    Center(
-      child: Text(
-        "Halaman Aktivitas",
-        style: TextStyle(
-          fontSize: 24,
-        ),
-      ),
-    ),
-    Center(
-      child: Text(
-        "Pengaturan",
-        style: TextStyle(
-          fontSize: 24,
-        ),
-      ),
-    ),
-  ];
-
-  void _onItemTapped(
-    int index,
-  ) {
-    setState(
-      () {
-        _selectedIndex = index;
       },
     );
   }
@@ -121,222 +79,41 @@ class _MyHomePageState
         backgroundColor: Theme.of(
           context,
         ).colorScheme.inversePrimary,
-        centerTitle: true,
+
         title: Text(
           widget.title,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: "Google Sans",
-          ),
         ),
       ),
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-            ),
-            label: "Beranda",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-            ),
-            label: "Profile",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.list,
-            ),
-            label: "Aktivitas",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.settings,
-            ),
-            label: "Pengaturan",
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// Halaman Profile
-class ProfilePage
-    extends
-        StatelessWidget {
-  const ProfilePage({super.key});
-
-  @override
-  Widget build(
-    BuildContext context,
-  ) {
-    void dialog(
-      BuildContext context,
-    ) {
-      showDialog(
-        context: context,
-        builder:
-            (
-              BuildContext context,
-            ) {
-              return AlertDialog(
-                title: Text(
-                  "Berhasil",
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:
+              <
+                Widget
+              >[
+                const Text(
+                  'You have pushed the button this many times:',
                 ),
-                content: Text(
-                  "Data berhasil disimpan.",
-                ),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.of(
-                      context,
-                    ).pop(),
-                    child: Text(
-                      "Tutup",
-                    ),
-                  ),
-                ],
-              );
-            },
-      );
-    }
-
-    return Padding(
-      padding: EdgeInsets.all(
-        25,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Column(
-              children: [
                 Text(
-                  'Profile',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontFamily: 'Google Sans',
-                    fontWeight: FontWeight.bold,
-                    height: 2,
-                  ),
+                  '$_counter',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.headlineMedium,
                 ),
-                CircleAvatar(
-                  backgroundImage: AssetImage(
-                    "Assets/Image/skir.jpg",
-                  ),
-                  radius: 71,
+                const Text(
+                  'hi',
                 ),
               ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Nama",
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: 'Google Sans',
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            "Faris Daffa",
-            style: TextStyle(
-              fontSize: 19,
-              fontFamily: 'Google Sans',
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Email",
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: 'Google Sans',
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            "farisdaffarin@gmail.com",
-            style: TextStyle(
-              fontSize: 19,
-              fontFamily: 'Google Sans',
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Phone",
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: 'Google Sans',
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            "+6289652043636",
-            style: TextStyle(
-              fontSize: 19,
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "About Me",
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: 'Google Sans',
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            """Lorem ipsum dolor sit amet, consectetur adipiscing . """,
-            style: TextStyle(
-              fontSize: 19,
-              fontFamily: 'Google Sans',
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 20,
-          ),
-
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color.fromARGB(
-                255,
-                18,
-                120,
-                203,
-              ),
-            ),
-            onPressed: () => dialog(
-              context,
-            ),
-            child: Text(
-              "Update Profile",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(
+          Icons.restart_alt,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
   }
 }
