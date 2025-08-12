@@ -53,6 +53,86 @@ class MyHomePage
   createState() => _MyHomePageState();
 }
 
+// Helper method to build action buttons
+Widget _buildActionButton(IconData icon, String label, VoidCallback onPressed) {
+  return Column(
+    children: [
+      Container(
+        padding: EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: Colors.blue[50],
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Icon(icon, color: Colors.blue[700], size: 24),
+      ),
+      SizedBox(height: 8),
+      Text(
+        label,
+        style: TextStyle(
+          fontSize: 12,
+          fontFamily: 'Google Sans',
+        ),
+      ),
+    ],
+  );
+}
+
+// Helper method to build event cards
+Widget _buildEventCard(String title, String time, String location, Color color) {
+  return Card(
+    elevation: 2,
+    child: Container(
+      decoration: BoxDecoration(
+        border: Border(
+          left: BorderSide(
+            color: color,
+            width: 4,
+          ),
+        ),
+      ),
+      child: ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        title: Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Google Sans',
+          ),
+        ),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 4),
+            Row(
+              children: [
+                Icon(Icons.access_time, size: 16, color: Colors.grey[600]),
+                SizedBox(width: 4),
+                Text(
+                  time,
+                  style: TextStyle(fontSize: 13),
+                ),
+              ],
+            ),
+            SizedBox(height: 2),
+            Row(
+              children: [
+                Icon(Icons.location_on, size: 16, color: Colors.grey[600]),
+                SizedBox(width: 4),
+                Text(
+                  location,
+                  style: TextStyle(fontSize: 13),
+                ),
+              ],
+            ),
+          ],
+        ),
+        trailing: Icon(Icons.chevron_right, color: Colors.grey[600]),
+        onTap: () {},
+      ),
+    ),
+  );
+}
+
 class _MyHomePageState
     extends
         State<
@@ -75,11 +155,117 @@ class _MyHomePageState
     Widget
   >
   _pages = [
-    Center(
-      child: Text(
-        "Beranda",
-        style: TextStyle(
-          fontSize: 24,
+    SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header with welcome message
+            Text(
+              'Halo, Faris!',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Google Sans',
+              ),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Apa yang ingin kamu lakukan hari ini?',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[600],
+                fontFamily: 'Google Sans',
+              ),
+            ),
+            SizedBox(height: 24),
+            
+            // Quick Actions
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _buildActionButton(Icons.assignment, 'Tugas', () {}),
+                _buildActionButton(Icons.calendar_today, 'Jadwal', () {}),
+                _buildActionButton(Icons.group, 'Grup', () {}),
+                _buildActionButton(Icons.settings, 'Pengaturan', () {}),
+              ],
+            ),
+            
+            SizedBox(height: 32),
+            
+            // Upcoming Events
+            Text(
+              'Kegiatan Mendatang',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Google Sans',
+              ),
+            ),
+            SizedBox(height: 16),
+            _buildEventCard(
+              'Studi Kelompok Matematika',
+              'Hari ini, 14.00 - 16.00',
+              'Ruang 301',
+              Colors.blue[100]!,
+            ),
+            SizedBox(height: 12),
+            _buildEventCard(
+              'Diskusi Proyek Akhir',
+              'Besok, 10.00 - 12.00',
+              'Ruang Lab Komputer',
+              Colors.green[100]!,
+            ),
+            
+            SizedBox(height: 24),
+            
+            // Quick Notes
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Catatan Cepat',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Google Sans',
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text('Lihat Semua'),
+                ),
+              ],
+            ),
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Tulis catatanmu di sini...',
+                        border: InputBorder.none,
+                      ),
+                      maxLines: 3,
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 18, 120, 203),
+                          foregroundColor: Colors.white,
+                        ),
+                        child: Text('Simpan'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     ),
