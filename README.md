@@ -1,6 +1,15 @@
-# study_club
+# Study Club Pemrograman Mobile
 
-A new Flutter project.
+## Progress Project:
+- [Day 1](https://github.com/Faris0520/study_club/tree/Day-1)
+  - Init project flutter
+  - Flutter doctor
+    
+- [Day 2](https://github.com/Faris0520/study_club/tree/Day-2)
+  - Build gradle done
+  - Buat Profile Page
+
+___
 
 ## Getting Started
 
