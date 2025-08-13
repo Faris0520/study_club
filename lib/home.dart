@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'profile.dart';
 import 'home.dart';
+import 'detail.dart';
 
 class Home
     extends
@@ -99,30 +100,52 @@ class _MyHome
             crossAxisCount: 2,
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            childAspectRatio: 0.78,
+            childAspectRatio: 0.6,
             children:
                 <
                   Widget
                 >[
                   ListItem(
+                    context: context,
                     nama: "Iphone 12",
-                    harga: "Rp. 11.000.000",
+                    harga: "Rp11.000.000",
                     Gambar: "https://images-cdn.ubuy.co.in/66292c9d2df83775d679582f-pre-owned-apple-iphone-12-carrier.jpg",
+                    detail: "jawa horeg",
                   ),
                   ListItem(
+                    context: context,
                     nama: "Iphone 11",
-                    harga: "Rp. 8.000.000",
+                    harga: "Rp8.000.000",
                     Gambar: "https://images-cdn.ubuy.co.id/64c0e3ce88e52d13f021245f-total-by-verizon-apple-iphone-11-64gb.jpg",
+                    detail: "medan magnet",
                   ),
                   ListItem(
+                    context: context,
                     nama: "Iphone 14",
-                    harga: "Rp. 16.000.000",
+                    harga: "Rp16.000.000",
                     Gambar: "https://www.digimap.co.id/cdn/shop/files/iPhone_14_Plus_Blue_PDP_Image_Position-1A__WWEN_f14f7e0c-57e1-4d73-9982-8fc99d79d15f.jpg?v=1717740790&width=823",
+                    detail: "palembang rendang",
                   ),
                   ListItem(
+                    context: context,
                     nama: "Iphone 15",
-                    harga: "Rp. 20.000.000",
+                    harga: "Rp20.000.000",
                     Gambar: "https://cdnpro.eraspace.com/media/catalog/product/a/p/apple_iphone_15_blue_1.jpg",
+                    detail: "jambi judol",
+                  ),
+                  ListItem(
+                    context: context,
+                    nama: "Iphone 15",
+                    harga: "Rp20.000.000",
+                    Gambar: "https://cdnpro.eraspace.com/media/catalog/product/a/p/apple_iphone_15_blue_1.jpg",
+                    detail: "jambi judol",
+                  ),
+                  ListItem(
+                    context: context,
+                    nama: "Iphone 15",
+                    harga: "Rp20.000.000",
+                    Gambar: "https://cdnpro.eraspace.com/media/catalog/product/a/p/apple_iphone_15_blue_1.jpg",
+                    detail: "jambi judol",
                   ),
                 ],
           ),
@@ -137,49 +160,86 @@ ListItem({
   required String nama,
   required String harga,
   required String Gambar,
+  required String detail,
+  required BuildContext context,
 }) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Container(
-        height: 170.0,
-        width: 170.0,
-        color: const Color.fromARGB(
-          255,
-          130,
-          216,
-          255,
-        ),
-        padding: EdgeInsets.all(
-          5,
-        ),
-        child: Image.network(
-          Gambar,
-          width: 150,
-          height: 150,
-          fit: BoxFit.cover,
-        ),
+  return Card(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(
+        8,
       ),
-      SizedBox(
-        height: 4,
-      ),
-      Text(
-        nama,
-        style: TextStyle(
-          fontFamily: 'Google Sans',
-          fontSize: 15.0,
-          fontWeight: FontWeight.bold,
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: ClipRRect(
+            borderRadius: const BorderRadius.vertical(
+              top: Radius.circular(
+                8,
+              ),
+            ),
+            child: Image.network(
+              Gambar,
+              fit: BoxFit.cover,
+              width: double.infinity,
+            ),
+          ),
         ),
-      ),
-      Text(
-        harga,
-        style: TextStyle(
-          fontFamily: 'Google Sans',
-          fontSize: 15.0,
-          fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.all(
+            8.0,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                nama,
+                style: const TextStyle(
+                  fontSize: 15,
+                ),
+              ),
+              Text(
+                harga,
+                style: const TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(
+                    255,
+                    2,
+                    132,
+                    146,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder:
+                          (
+                            _,
+                          ) => detailProduk(
+                            nama: nama,
+                            harga: harga,
+                            Gambar: Gambar,
+                            detail: detail,
+                          ),
+                    ),
+                  );
+                },
+                child: const Text(
+                  "Detail",
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    ],
+      ],
+    ),
   );
 }
