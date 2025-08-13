@@ -14,6 +14,7 @@ class detailProduk
     required this.Gambar,
     required this.detail,
   });
+    
   @override
   Widget build(
     BuildContext context,
