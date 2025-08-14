@@ -1,4 +1,4 @@
-# Study Club Pemrograman Mobile
+# Study Club Pemrograman Mobile (Day 3)
 
 ## Progress Project:
 - [Day 1](https://github.com/Faris0520/study_club/tree/Day-1)
