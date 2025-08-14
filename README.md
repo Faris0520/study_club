@@ -4,10 +4,15 @@
 - [Day 1](https://github.com/Faris0520/study_club/tree/Day-1)
   - Init project flutter
   - Flutter doctor
+  - [Tugas Penjelasan Flutter]()
     
 - [Day 2](https://github.com/Faris0520/study_club/tree/Day-2)
   - Build gradle done
   - Buat Profile Page
+
+- [Day 3](https://github.com/Faris0520/study_club/tree/Day-3)
+  - Buat Home Page (Ecommerce)
+  - Buat Detail Page
 
 ___
 
