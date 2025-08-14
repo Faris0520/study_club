@@ -1,10 +1,9 @@
-# Study Club Pemrograman Mobile (Day 1)
+# Study Club Pemrograman Mobile (Day 2)
 
 ## Progress Project:
 - [Day 1](https://github.com/Faris0520/study_club/tree/Day-1)
   - Init project flutter
   - Flutter doctor
-  - [Tugas Penjelasan Flutter]()
     
 - [Day 2](https://github.com/Faris0520/study_club/tree/Day-2)
   - Build gradle done
@@ -13,6 +12,10 @@
 - [Day 3](https://github.com/Faris0520/study_club/tree/Day-3)
   - Buat Home Page (Ecommerce)
   - Buat Detail Page
+
+- [Day 4](https://github.com/Faris0520/study_club/tree/Day-4)
+  - Buat Riwayat Page
+  - Tambah fungsi Backdrop
 
 ___
 
