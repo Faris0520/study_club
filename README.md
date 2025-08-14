@@ -13,7 +13,7 @@
   - Buat Home Page (Ecommerce)
   - Buat Detail Page
 
-- [Day 4](https://github.com/Faris0520/study_club/tree/Day-4)
+- [Day 4](https://github.com/Faris0520/study_club/tree/Day-4) (_main_)
   - Buat Riwayat Page
   - Tambah fungsi Backdrop
 
