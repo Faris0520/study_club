@@ -5,13 +5,13 @@ class detailProduk
         StatelessWidget {
   final String nama;
   final String harga;
-  final String Gambar;
+  final String gambar;
   final String detail;
 
-  const detailProduk({
+  const detailProduk({super.key, 
     required this.nama,
     required this.harga,
-    required this.Gambar,
+    required this.gambar,
     required this.detail,
   });
     
@@ -22,7 +22,7 @@ class detailProduk
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Dashboard",
+          "Detail Produk",
         ),
         actions: const [],
       ),
@@ -35,26 +35,64 @@ class detailProduk
             children: [
               Center(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Image.network(
-                      Gambar,
-                      width: 200,
-                      height: 200,
+                      gambar,
+                      width: 400,
+                      height: 400,
                       fit: BoxFit.cover,
                     ),
+                    SizedBox(height: 10),
                     Text(
                       nama,
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
               ),
-              Text(
-                harga.toString(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Rp",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 2, 132, 146),
+                    ),
+                  ),
+                  Text(
+                    harga,
+                    style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 2, 132, 146),
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                detail,
+              SizedBox(height: 20),
+              SizedBox(height: 10),
+              Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Deskripsi:",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      detail,
+                      ),
+                  ],
+                ),
               ),
             ],
           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
 
 void
 main() {
@@ -96,10 +95,19 @@ class _ProfileState
     }
 
     return Scaffold(
+      backgroundColor: Color.fromRGBO(
+        245,
+        239,
+        231,
+        1,
+      ),
       appBar: AppBar(
-        backgroundColor: Theme.of(
-          context,
-        ).colorScheme.inversePrimary,
+        backgroundColor: Color.fromRGBO(
+          33,
+          53,
+          85,
+          1,
+        ),
         centerTitle: true,
 
         title: Text(
@@ -107,6 +115,8 @@ class _ProfileState
           widget.title,
           style: TextStyle(
             fontFamily: "Google Sans",
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
           ),
         ),
       ),
@@ -119,17 +129,26 @@ class _ProfileState
               index,
             ) {
               if (index ==
-                  0)
+                  0) {
                 Navigator.popAndPushNamed(
                   context,
                   '/',
                 );
+              }
               if (index ==
-                  1)
+                  1) {
                 Navigator.popAndPushNamed(
                   context,
                   '/profile',
                 );
+              }
+              if (index ==
+                  2) {
+                Navigator.popAndPushNamed(
+                  context,
+                  '/riwayat',
+                );
+              }
             },
         items: const [
           BottomNavigationBarItem(
@@ -146,9 +165,9 @@ class _ProfileState
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.settings,
+              Icons.history,
             ),
-            label: 'Pengaturan',
+            label: 'Riwayat',
           ),
         ],
       ),
@@ -162,26 +181,47 @@ class _ProfileState
             Center(
               child: Column(
                 children: [
-                  Text(
-                    'Profile',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'Google Sans',
-                      fontWeight: FontWeight.bold,
-                      height: 2,
-                    ),
+                  SizedBox(
+                    height: 10,
                   ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage(
-                      "Assets/Image/skir.jpg",
-                    ),
-                    radius: 71,
+                  Stack(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                          "Assets/Image/hutao.jpg",
+                        ),
+                        radius: 85,
+                      ),
+                      Positioned(
+                        right: 0,
+                        bottom: 0,
+                        child: Container(
+                          padding: EdgeInsets.all(
+                            9,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(
+                              255,
+                              212,
+                              211,
+                              211,
+                            ),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.edit,
+                            color: Colors.grey[700],
+                            size: 24,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             Text(
               "Nama",
@@ -200,7 +240,7 @@ class _ProfileState
             ),
             Divider(),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Text(
               "Email",
@@ -219,7 +259,7 @@ class _ProfileState
             ),
             Divider(),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Text(
               "Phone",
@@ -237,7 +277,7 @@ class _ProfileState
             ),
             Divider(),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Text(
               "About Me",
@@ -261,21 +301,21 @@ class _ProfileState
 
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(
-                  255,
-                  18,
-                  120,
-                  203,
+                backgroundColor: Color.fromRGBO(
+                  62,
+                  88,
+                  121,
+                  1,
                 ),
               ),
               onPressed: () => dialog(
                 context,
               ),
               child: Text(
-                "Update Profile",
+                "Update",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 15,
+                  fontSize: 17,
                 ),
               ),
             ),

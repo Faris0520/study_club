@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
@@ -33,13 +34,21 @@ flutter:
     - family: Google Sans
       fonts:
         - asset: Assets/Fonts/GoogleSans-Regular.ttf
+          weight: 400
         - asset: Assets/Fonts/GoogleSans-Italic.ttf
           style: italic
+        - asset: Assets/Fonts/GoogleSans-Medium.ttf
+          weight: 500
+        - asset: Assets/Fonts/GoogleSans-Bold.ttf
+          weight: 600
 
     - family: Product Sans
       fonts:
         - asset: Assets/Fonts/Product Sans Bold.ttf
+          weight: 600
         - asset: Assets/Fonts/Product Sans Regular.ttf
+          weight: 400
+
 
     - family: Minecraft
       fonts:

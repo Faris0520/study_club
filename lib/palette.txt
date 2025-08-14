@@ -1,0 +1,35 @@
+1.
+backgroundColor: Color.fromRGBO(
+          33,
+          53,
+          85,
+          1
+        ),
+rgb(33, 53, 85)
+
+2.
+backgroundColor: Color.fromRGBO(
+          62,
+          88,
+          121,
+          1,
+        ),
+rgb(62, 88, 121)
+
+3.
+backgroundColor: Color.fromRGBO(
+          216,
+          196,
+          182,
+          1,
+        ),
+rgb(216, 196, 182)
+
+4.
+backgroundColor: Color.fromRGBO(
+        245,
+        239,
+        231,
+        1,
+      ),
+rgb(245, 239, 231)

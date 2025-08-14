@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'profile.dart';
 import 'home.dart';
+import 'riwayat.dart';
 
 void
 main() {
@@ -34,6 +35,12 @@ class MyApp
               context,
             ) => Profile(
               title: 'Profile',
+            ),
+        '/riwayat':
+            (
+              context,
+            ) => Riwayat(
+              title: 'Riwayat',
             ),
       },
     );
