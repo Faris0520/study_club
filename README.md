@@ -17,6 +17,9 @@
   - Buat Riwayat Page
   - Tambah fungsi Backdrop
 
+___
+
+<img height="510" alt="image" src="https://github.com/user-attachments/assets/cb590323-b304-4374-917f-8ed2ad3de4c3" />
 
 ___
 
