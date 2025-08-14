@@ -8,13 +8,14 @@ class detailProduk
   final String gambar;
   final String detail;
 
-  const detailProduk({super.key, 
+  const detailProduk({
+    super.key,
     required this.nama,
     required this.harga,
     required this.gambar,
     required this.detail,
   });
-    
+
   @override
   Widget build(
     BuildContext context,
@@ -44,10 +45,15 @@ class detailProduk
                       height: 400,
                       fit: BoxFit.cover,
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Text(
                       nama,
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
@@ -60,7 +66,12 @@ class detailProduk
                     style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 2, 132, 146),
+                      color: Color.fromARGB(
+                        255,
+                        2,
+                        132,
+                        146,
+                      ),
                     ),
                   ),
                   Text(
@@ -68,13 +79,22 @@ class detailProduk
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 2, 132, 146),
+                      color: Color.fromARGB(
+                        255,
+                        2,
+                        132,
+                        146,
+                      ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
-              SizedBox(height: 10),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                height: 10,
+              ),
               Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,11 +107,59 @@ class detailProduk
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(
+                      height: 5,
+                    ),
                     Text(
                       detail,
-                      ),
+                    ),
                   ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: ElevatedButton(
+                  onPressed: () {
+                    ScaffoldMessenger.of(
+                      context,
+                    ).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Berhasil membeli $nama',
+                        ),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(
+                      255,
+                      2,
+                      132,
+                      146,
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 15,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        12,
+                      ),
+                    ),
+                  ),
+                  child: Text(
+                    'Beli',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ),
             ],

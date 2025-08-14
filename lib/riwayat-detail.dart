@@ -7,6 +7,7 @@ class detailProduk
   final String harga;
   final String gambar;
   final String detail;
+  final String status;
 
   const detailProduk({
     super.key,
@@ -14,6 +15,7 @@ class detailProduk
     required this.harga,
     required this.gambar,
     required this.detail,
+    required this.status,
   });
 
   @override
@@ -69,7 +71,7 @@ class detailProduk
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      fontFamily: "Google Sans",
+                      fontFamily: "SF Pro",
                       color: Color.fromARGB(
                         255,
                         2,
@@ -83,7 +85,7 @@ class detailProduk
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      fontFamily: "Google Sans",
+                      fontFamily: "SF Pro",
                       color: Color.fromARGB(
                         255,
                         2,
@@ -102,13 +104,13 @@ class detailProduk
                 style: TextStyle(
                   fontSize: 23,
                   fontWeight: FontWeight.bold,
-                  fontFamily: "Google Sans",
+                  fontFamily: "SF Pro",
                 ),
               ),
               Text(
-                "Sedang Dikirim",
+                status,
                 style: TextStyle(
-                  fontFamily: "Google Sans",
+                  fontFamily: "SF Pro",
                   fontSize: 17,
                 ),
               ),

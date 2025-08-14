@@ -114,16 +114,21 @@ class _ProfileState
           textAlign: TextAlign.center,
           widget.title,
           style: TextStyle(
-            fontFamily: "Google Sans",
+            fontFamily: "SF Pro",
             fontWeight: FontWeight.w600,
             color: Colors.white,
           ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.grey[700],
+        selectedItemColor: Color.fromRGBO(
+          33,
+          53,
+          85,
+          1,
+        ),
         unselectedItemColor: Colors.grey[400],
-        currentIndex: 1,
+        currentIndex: 2,
         onTap:
             (
               index,
@@ -139,14 +144,14 @@ class _ProfileState
                   1) {
                 Navigator.popAndPushNamed(
                   context,
-                  '/profile',
+                  '/riwayat',
                 );
               }
               if (index ==
                   2) {
                 Navigator.popAndPushNamed(
                   context,
-                  '/riwayat',
+                  '/profile',
                 );
               }
             },
@@ -159,15 +164,15 @@ class _ProfileState
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person,
-            ),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.history,
             ),
             label: 'Riwayat',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+            ),
+            label: 'Profile',
           ),
         ],
       ),
@@ -227,7 +232,7 @@ class _ProfileState
               "Nama",
               style: TextStyle(
                 fontSize: 17,
-                fontFamily: 'Google Sans',
+                fontFamily: 'SF Pro',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -235,7 +240,7 @@ class _ProfileState
               "Faris Daffa",
               style: TextStyle(
                 fontSize: 19,
-                fontFamily: 'Google Sans',
+                fontFamily: 'SF Pro',
               ),
             ),
             Divider(),
@@ -246,7 +251,7 @@ class _ProfileState
               "Email",
               style: TextStyle(
                 fontSize: 17,
-                fontFamily: 'Google Sans',
+                fontFamily: 'SF Pro',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -254,7 +259,7 @@ class _ProfileState
               "farisdaffarin@gmail.com",
               style: TextStyle(
                 fontSize: 19,
-                fontFamily: 'Google Sans',
+                fontFamily: 'SF Pro',
               ),
             ),
             Divider(),
@@ -265,7 +270,7 @@ class _ProfileState
               "Phone",
               style: TextStyle(
                 fontSize: 17,
-                fontFamily: 'Google Sans',
+                fontFamily: 'SF Pro',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -283,7 +288,7 @@ class _ProfileState
               "About Me",
               style: TextStyle(
                 fontSize: 17,
-                fontFamily: 'Google Sans',
+                fontFamily: 'SF Pro',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -291,7 +296,7 @@ class _ProfileState
               """Lorem ipsum dolor sit amet, consectetur adipiscing . """,
               style: TextStyle(
                 fontSize: 19,
-                fontFamily: 'Google Sans',
+                fontFamily: 'SF Pro',
               ),
             ),
             Divider(),
